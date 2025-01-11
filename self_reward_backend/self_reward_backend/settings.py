@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'service',
-    'corsheaders'
+    'corsheaders',
+    'djongo'
 ]
 
 MIDDLEWARE = [
@@ -83,11 +84,20 @@ WSGI_APPLICATION = "self_reward_backend.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'self-reward-user-db',  # Name of your MongoDB database
+        'CLIENT': {
+            'host': 'mongodb+srv://nsaji:<db_password>@self-reward.sspbm.mongodb.net/?retryWrites=true&w=majority&appName=self-reward',  # MongoDB Atlas URL
+            'port': 27017,
+            'username': 'nsaji',  # MongoDB username
+            'password': '2!AL@ecyc7RsYmD',  # MongoDB password
+            'authSource': 'admin',
+        }
     }
 }
+
+
 
 
 # Password validation

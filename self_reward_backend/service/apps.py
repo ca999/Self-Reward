@@ -1,6 +1,4 @@
-from django.apps import AppConfig
+from django.contrib import admin
+from .models import User
 
-
-class ServiceConfig(AppConfig):
-    default_auto_field = "django.db.models.BigAutoField"
-    name = "service"
+admin.site.register(User)
