@@ -10,7 +10,6 @@ def home(request):
             data = json.loads(request.body)
             email = data.get("email")
             name = data.get("name")
-            picture = data.get("picture")
 
             # Log or process user data
             print(f"User logged in: {name} ({email})")
