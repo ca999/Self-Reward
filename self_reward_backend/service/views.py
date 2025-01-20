@@ -17,4 +17,4 @@ def home(request):
             return JsonResponse({"message": "Login data received successfully!"}, status=200)
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=400)
-    return JsonResponse({"error": "Invalid request method"}, status=405)
+    return JsonResponse({"error": "Invalid request method for the post request"}, status=405)
